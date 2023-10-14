@@ -19,38 +19,29 @@ return (-1);
 }
 while (format[c] != '\0')
 {
-++c;
-}
+++c; }
 n = 0;
 for (i = 0; i < c; ++i)
 {
 if (format[i] != '%')
 {
-n += _putchar(format[i]);
-}
+n += _putchar(format[i]); }
 else
 {
 if (format[i + 1] == 'c')
 {
 n += print_char(&ptr);
-++i;
-}
+++i; }
 else if (format[i + 1] == '%')
 {
 n += print_percent();
-++i;
-}
+++i; }
 else if (format[i + 1] == 's')
 {
 n += print_str(&ptr);
-++i;
-}
+++i; }
 else
 {
-return (-1);
-}
-}
-}
+return (-1); }}}
 va_end(ptr);
-return (n);
-}
+return (n); }
