@@ -13,7 +13,11 @@ int n;
 va_list ptr;
 va_start(ptr, format);
 c = 0;
-while (format [c] != '\0')
+if (format == NULL)
+{
+return (0);
+}
+while (format[c] != '\0')
 {
 ++c;
 }
