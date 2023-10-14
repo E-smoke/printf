@@ -15,7 +15,7 @@ va_start(ptr, format);
 c = 0;
 if (format == NULL)
 {
-return (0);
+return (-1);
 }
 while (format[c] != '\0')
 {
