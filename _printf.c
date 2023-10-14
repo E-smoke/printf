@@ -47,7 +47,7 @@ n += print_str(&ptr);
 }
 else
 {
-return (n);
+return (-1);
 }
 }
 }
