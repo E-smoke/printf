@@ -7,7 +7,7 @@
 
 int _putchar(char c);
 int print_char(va_list *ptr);
-int print_percent();
+int print_percent(void);
 int print_str(va_list *ptr);
 int _printf(const char *format, ...);
 
