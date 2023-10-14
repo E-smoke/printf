@@ -11,9 +11,4 @@ int print_percent();
 int print_str(va_list *ptr);
 int _printf(const char *format, ...);
 
-#include "putchar.c"
-#include "print_char.c"
-#include "print_percent.c"
-#include "print_str.c"
-#include "_printf.c"
 #endif
