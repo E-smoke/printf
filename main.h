@@ -10,5 +10,11 @@ int print_char(va_list *ptr);
 int print_percent(void);
 int print_str(va_list *ptr);
 int _printf(const char *format, ...);
+int _strlen(char *str);
+char *reverse(char *str);
+void _memcpy(void *optr, void *nptr, size_t numtocpy);
+void *_realloc(void *optr, size_t byte);
+char *_atoi(int num);
+int print_int(va_list *ptr);
 
 #endif

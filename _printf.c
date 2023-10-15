@@ -39,6 +39,10 @@ else if (format[i + 1] == 's')
 {
 n += print_str(&ptr);
 ++i; }
+else if ((format[i + 1] == 'd') || (format[i + 1] == 'i'))
+{
+n += print_int(&ptr);
+++i; }
 else
 {
 return (-1); }}}

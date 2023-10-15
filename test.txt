@@ -9,7 +9,6 @@
 
 int main()
 {
-int len1 = _printf("%s", NULL);
-printf("%d", len1);
+_printf("ama had grade %c in exams, she scored 98%% and she is %dyrs old.\n", 'A', 28);
 return (0);
 }
