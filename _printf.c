@@ -15,6 +15,7 @@ va_start(ptr, format);
 c = 0;
 if (format == NULL)
 {
+va_end(ptr);
 return (-1);
 }
 while (format[c] != '\0')
@@ -42,6 +43,7 @@ n += print_str(&ptr);
 ++i; }
 else
 {
+va_end(ptr);
 return (-1); }}}
 va_end(ptr);
 return (n); }
