@@ -11,11 +11,11 @@ int i;
 int c;
 int n;
 va_list ptr;
-va_start(ptr, format);
 c = 0;
 if (format == NULL)
 {
 return (-1); }
+va_start(ptr, format);
 while (format[c] != '\0')
 {
 ++c; }
@@ -39,6 +39,10 @@ else if (format[i + 1] == 's')
 {
 n += print_str(&ptr);
 ++i; }
+else if (format[i + 1] == '\0')
+{
+break;
+}
 else
 {
 return (-1); }}}
