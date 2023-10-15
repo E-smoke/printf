@@ -41,6 +41,6 @@ n += print_str(&ptr);
 ++i; }
 else
 {
-return (0); }}}
+return (-1); }}}
 va_end(ptr);
 return (n); }
