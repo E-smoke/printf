@@ -1,4 +1,10 @@
 #include "main.h"
+/**
+ * _printf - mimics printf
+ * @format: formatted string
+ * @...: variadic var
+ * Return: returns the number of chars printed on success
+ */
 int _printf(const char *format, ...)
 {
 int i;
@@ -10,7 +16,7 @@ c = 0;
 if (format == NULL)
 {
 return (-1); }
-while (format [c] != '\0')
+while (format[c] != '\0')
 {
 ++c; }
 n = 0;
@@ -37,4 +43,4 @@ else
 {
 return (0); }}}
 va_end(ptr);
-return (n);}
+return (n); }
