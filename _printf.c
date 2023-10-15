@@ -39,9 +39,6 @@ else if (format[i + 1] == 's')
 {
 n += print_str(&ptr);
 ++i; }
-else if (format[i + 1] == '\0')
-{
-n = n; }
 else
 {
 return (-1); }}}
