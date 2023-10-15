@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include "main.h"
+
+
+
+
+
+
+
+int main()
+{
+int len = printf("%s", NULL);
+int len1 = _printf("%s", NULL);
+printf("%d %d", len1, len);
+return (0);
+}
