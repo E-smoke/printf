@@ -7,11 +7,12 @@
  */
 int _printf(const char *format, ...)
 {
-spec specifiers[5] = {
+spec specifiers[] = {
 {'c', print_char},
 {'s', print_str},
 {'d', print_int},
 {'i', print_int},
+{'b', print_binary},
 {'\0', NULL}
 };
 int i, j, c, check, n;

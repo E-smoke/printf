@@ -10,8 +10,8 @@
 int main()
 {
 int len, len1;
-len = _printf("%d  %i  %c  %%  %s\n", -293, 3200, 'A', "yaw");
-len1 = printf("%d  %i  %c  %%  %s\n", -293, 3200, 'A', "yaw");
+len = _printf("%d  %i  %c  %%  %s  %b\n", -293, 3200, 'A', "yaw", 98);
+len1 = printf("%d  %i  %c  %%  %s  \n", -293, 3200, 'A', "yaw");
 printf("%d  %d\n", len, len1);
 _printf("ama had grade %c in exams, she scored 98%% and she is %dyrs old.\n", 'A', 28);
 
