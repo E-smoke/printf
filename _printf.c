@@ -13,6 +13,7 @@ spec specifiers[] = {
 {'d', print_int},
 {'i', print_int},
 {'b', print_binary},
+{'u', print_unsigned},
 {'\0', NULL}
 };
 int i, j, c, check, n;

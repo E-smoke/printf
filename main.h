@@ -18,6 +18,7 @@ char *_atoi(int num);
 int print_int(va_list *ptr);
 char *int_binary(unsigned int num);
 int print_binary(va_list *ptr);
+int print_unsigned(va_list *ptr);
 /**
  * struct spec - structure
  * @c: char
