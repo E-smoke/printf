@@ -21,6 +21,8 @@ int print_binary(va_list *ptr);
 int print_unsigned(va_list *ptr);
 char *int_octal(unsigned int num);
 int print_octal(va_list *ptr);
+char *int_hexs(unsigned int num);
+int print_hexs(va_list *ptr);
 /**
  * struct spec - structure
  * @c: char
