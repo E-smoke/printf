@@ -7,15 +7,20 @@
  */
 int _printf(const char *format, ...)
 {
-int i;
-int c;
-int n;
+spec specifiers[5] = {
+{'c', print_char},
+{'s', print_str},
+{'d', print_int},
+{'i', print_int},
+{'\0', NULL}
+};
+int i, j, c, check, n;
 va_list ptr;
+va_start(ptr, format);
 c = 0;
 if (format == NULL)
 {
 return (-1); }
-va_start(ptr, format);
 while (format[c] != '\0')
 {
 ++c; }
@@ -27,24 +32,26 @@ if (format[i] != '%')
 n += _putchar(format[i]); }
 else
 {
-if (format[i + 1] == 'c')
-{
-n += print_char(&ptr);
-++i; }
-else if (format[i + 1] == '%')
+check = 0;
+if (format[i + 1] == '%')
 {
 n += print_percent();
-++i; }
-else if (format[i + 1] == 's')
-{
-n += print_str(&ptr);
-++i; }
-else if ((format[i + 1] == 'd') || (format[i + 1] == 'i'))
-{
-n += print_int(&ptr);
-++i; }
+++i;
+check = 1; }
 else
 {
-return (-1); }}}
+j = 0;
+while (specifiers[j].c != '\0')
+{
+if (specifiers[j].c == format[i + 1])
+{
+n += specifiers[j].funct_ptr(&ptr);
+++i;
+check = 1;
+break; }
+++j; }}
+if (check == 0)
+{
+return  (-1); }}}
 va_end(ptr);
 return (n); }

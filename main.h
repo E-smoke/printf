@@ -17,4 +17,15 @@ void *_realloc(void *optr, size_t byte);
 char *_atoi(int num);
 int print_int(va_list *ptr);
 
+/**
+ * struct spec - structure
+ * @c: char
+ * @funct_ptr: pointer to function
+ */
+typedef struct spec
+{
+char c;
+int (*funct_ptr)(va_list *);
+} spec;
+
 #endif
