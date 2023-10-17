@@ -4,7 +4,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include <stdint.h>
 
 int _putchar(char c);
 int putbuff(char c, char **pc);
@@ -30,7 +29,6 @@ char *int_hexc(unsigned int num);
 int print_hexc(va_list *ptr, char **pc);
 int nonprintable(va_list *ptr, char **pc);
 int print_addy(va_list *ptr, char **pc);
-char *int_hexsa(uintptr_t num);
 /**
  * struct spec - structure
  * @c: char
