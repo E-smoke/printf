@@ -23,6 +23,8 @@ char *int_octal(unsigned int num);
 int print_octal(va_list *ptr);
 char *int_hexs(unsigned int num);
 int print_hexs(va_list *ptr);
+char *int_hexc(unsigned int num);
+int print_hexc(va_list *ptr);
 /**
  * struct spec - structure
  * @c: char

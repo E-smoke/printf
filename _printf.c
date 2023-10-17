@@ -16,6 +16,7 @@ spec specifiers[] = {
 {'u', print_unsigned},
 {'o', print_octal},
 {'x', print_hexs},
+{'X', print_hexc},
 {'\0', NULL}
 };
 int i, j, c, check, n;
