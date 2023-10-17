@@ -18,6 +18,7 @@ spec specifiers[] = {
 {'o', print_octal},
 {'x', print_hexs},
 {'X', print_hexc},
+{'S', nonprintable},
 {'\0', NULL}
 };
 int i, j, c, check, n;
