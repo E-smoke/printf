@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * _printf - mimics printf
  * @format: formatted string
@@ -19,6 +18,7 @@ spec specifiers[] = {
 {'x', print_hexs},
 {'X', print_hexc},
 {'S', nonprintable},
+{'p', print_addy},
 {'\0', NULL}
 };
 int i, j, c, check, n;
