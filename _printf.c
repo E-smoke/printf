@@ -24,7 +24,7 @@ spec specifiers[] = {
 int i, j, c, check, n;
 va_list ptr;
 char *pc;
-char buff[10024];
+char buff[10000024];
 c = 0;
 va_start(ptr, format);
 if (format == NULL)
