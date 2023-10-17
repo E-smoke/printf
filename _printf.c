@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * _printf - mimics printf
  * @format: formatted string
@@ -21,26 +22,29 @@ spec specifiers[] = {
 };
 int i, j, c, check, n;
 va_list ptr;
-va_start(ptr, format);
+char *pc;
+char buff[1024];
 c = 0;
+va_start(ptr, format);
 if (format == NULL)
 {
 return (-1); }
 while (format[c] != '\0')
 {
-++c; }
-n = 0;
+++c;
+}
+pc = buff;
 for (i = 0; i < c; ++i)
 {
 if (format[i] != '%')
 {
-n += _putchar(format[i]); }
+putbuff(format[i], &pc); }
 else
 {
 check = 0;
 if (format[i + 1] == '%')
 {
-n += print_percent();
+print_percent(&pc);
 ++i;
 check = 1; }
 else
@@ -50,7 +54,7 @@ while (specifiers[j].c != '\0')
 {
 if (specifiers[j].c == format[i + 1])
 {
-n += specifiers[j].funct_ptr(&ptr);
+specifiers[j].funct_ptr(&ptr, &pc);
 ++i;
 check = 1;
 break; }
@@ -59,4 +63,6 @@ if (check == 0)
 {
 return  (-1); }}}
 va_end(ptr);
+putbuff('\0', &pc);
+n = print_buff(buff);
 return (n); }
