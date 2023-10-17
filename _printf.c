@@ -21,10 +21,21 @@ spec specifiers[] = {
 {'p', print_addy},
 {'\0', NULL}
 };
-int i, j, c, check, n;
+int i, j, c, check, n, l;
 va_list ptr;
 char *pc;
 char buff[1024];
+for (l = 0; l < 1024; ++l)
+{
+if (l == 1023)
+{
+buff[1023] = '\0';
+}
+else
+{
+buff[l] = '0';
+}
+}
 c = 0;
 va_start(ptr, format);
 if (format == NULL)
@@ -32,13 +43,14 @@ if (format == NULL)
 return (-1); }
 while (format[c] != '\0')
 {
-++c;
-}
+++c; }
+n = 0;
 pc = buff;
 for (i = 0; i < c; ++i)
 {
 if (format[i] != '%')
 {
+n++;
 putbuff(format[i], &pc); }
 else
 {
@@ -47,6 +59,7 @@ if (format[i + 1] == '%')
 {
 print_percent(&pc);
 ++i;
+++n;
 check = 1; }
 else
 {
@@ -55,7 +68,7 @@ while (specifiers[j].c != '\0')
 {
 if (specifiers[j].c == format[i + 1])
 {
-specifiers[j].funct_ptr(&ptr, &pc);
+n += specifiers[j].funct_ptr(&ptr, &pc);
 ++i;
 check = 1;
 break; }
@@ -65,5 +78,5 @@ if (check == 0)
 return  (-1); }}}
 va_end(ptr);
 putbuff('\0', &pc);
-n = print_buff(buff);
+print_buff(buff);
 return (n); }
