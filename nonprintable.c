@@ -20,7 +20,7 @@ if (((str[i] > 0) && (str[i] < 32)) || (str[i] >= 127))
 hexval = int_hexc(str[i]);
 putbuff('\\', pc);
 putbuff('x', pc);
-n = 2;
+n += 2;
 if (_strlen(hexval) > 1)
 {
 for (j = 0; j < _strlen(hexval); ++j)
