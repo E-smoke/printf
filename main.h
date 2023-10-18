@@ -31,6 +31,10 @@ int print_hexc(va_list *ptr, char **pc);
 int nonprintable(va_list *ptr, char **pc);
 char *int_hexsa(uintptr_t num);
 int print_addy(va_list *ptr, char **pc);
+int flag_plus(va_list *ptr, char **pc);
+int flag_space(va_list *ptr, char **pc);
+int flag_hashhex(va_list *ptr, char **pc);
+int flag_hashoct(va_list *ptr, char **p);
 /**
  * struct spec - structure
  * @c: char
@@ -41,5 +45,18 @@ typedef struct spec
 char c;
 int (*funct_ptr)(va_list *, char **);
 } spec;
+
+/**
+ * struct spec1 - structure
+ * @c0: char
+ * @c1: char
+ * @funct_ptr: pointer to function
+ */
+typedef struct spec1
+{
+char c0;
+char c1;
+int (*funct_ptr)(va_list *, char **);
+} spec1;
 
 #endif

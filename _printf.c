@@ -21,6 +21,15 @@ spec specifiers[] = {
 {'p', print_addy},
 {'\0', NULL}
 };
+spec1 specs[] = {
+{'+', 'd', flag_plus},
+{'+', 'i', flag_plus},
+{' ', 'd', flag_space},
+{' ', 'i', flag_space},
+{'#', 'x', flag_hashhex},
+{'#', 'o', flag_hashoct},
+{'\0', '\0', NULL},
+};
 int i, j, c, check, n, l;
 va_list ptr;
 char *pc;
@@ -75,7 +84,21 @@ break; }
 ++j; }}
 if (check == 0)
 {
-return  (-1); }}}
+j = 0;
+while (specs[j].c0 != '\0')
+{
+if ((specs[j].c0 == format[i + 1]) && (specs[j].c1 == format[i + 2]))
+{
+n += specs[j].funct_ptr(&ptr, &pc);
+i += 2;
+check = 1;
+break;
+}
+++j;
+}
+if (check == 0)
+{
+return  (-1); }}}}
 va_end(ptr);
 putbuff('\0', &pc);
 print_buff(buff);
