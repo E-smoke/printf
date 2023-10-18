@@ -51,12 +51,12 @@ putbuff(str[i], pc);
 return (n);
 }
 /**
- * flag_hashhex - puts 0x in front
+ * flag_hashhexs - puts 0x in front
  * @ptr: ptr to variadic funct
  * @pc: ptr
  * Return: the number of chars printed to buff
  */
-int flag_hashhex(va_list *ptr, char **pc)
+int flag_hashhexs(va_list *ptr, char **pc)
 {
 int i;
 unsigned int num, n;
@@ -64,6 +64,30 @@ char *str;
 n = 0;
 num = va_arg(*ptr, unsigned int);
 str = int_hexs(num);
+putbuff('0', pc);
+putbuff('x', pc);
+n += 2;
+for (i = 0; i < _strlen(str); ++i)
+{
+putbuff(str[i], pc);
+++n;
+}
+return (n);
+}
+/**
+ * flag_hashhexc - puts 0x in front
+ * @ptr: ptr to variadic funct
+ * @pc: ptr
+ * Return: the number of chars printed to buff
+ */
+int flag_hashhexc(va_list *ptr, char **pc)
+{
+int i;
+unsigned int num, n;
+char *str;
+n = 0;
+num = va_arg(*ptr, unsigned int);
+str = int_hexc(num);
 putbuff('0', pc);
 putbuff('x', pc);
 n += 2;

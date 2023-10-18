@@ -26,7 +26,8 @@ spec1 specs[] = {
 {'+', 'i', flag_plus},
 {' ', 'd', flag_space},
 {' ', 'i', flag_space},
-{'#', 'x', flag_hashhex},
+{'#', 'x', flag_hashhexs},
+{'#', 'X', flag_hashhexc},
 {'#', 'o', flag_hashoct},
 {'\0', '\0', NULL},
 };

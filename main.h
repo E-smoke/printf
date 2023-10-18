@@ -33,7 +33,8 @@ char *int_hexsa(uintptr_t num);
 int print_addy(va_list *ptr, char **pc);
 int flag_plus(va_list *ptr, char **pc);
 int flag_space(va_list *ptr, char **pc);
-int flag_hashhex(va_list *ptr, char **pc);
+int flag_hashhexs(va_list *ptr, char **pc);
+int flag_hashhexc(va_list *ptr, char **pc);
 int flag_hashoct(va_list *ptr, char **p);
 /**
  * struct spec - structure
