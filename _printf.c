@@ -29,6 +29,14 @@ spec1 specs[] = {
 {'#', 'x', flag_hashhexs},
 {'#', 'X', flag_hashhexc},
 {'#', 'o', flag_hashoct},
+{'l', 'd', print_intl},
+{'l', 'i', print_intl},
+{'h', 'd', print_ints},
+{'h', 'i', print_intl},
+{'h', 'o', print_octal},
+{'h', 'x', print_hexs},
+{'h', 'X', print_hexc},
+{'h', 'u', print_unsigned},
 {'\0', '\0', NULL},
 };
 int i, j, c, check, n, l;

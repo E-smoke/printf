@@ -19,6 +19,8 @@ void _memcpy(void *optr, void *nptr, size_t numtocpy);
 void *_realloc(void *optr, size_t byte);
 char *_atoi(int num);
 int print_int(va_list *ptr, char **pc);
+int print_ints(va_list *ptr, char **pc);
+int print_intl(va_list *ptr, char **pc);
 char *int_binary(unsigned int num);
 int print_binary(va_list *ptr, char **pc);
 int print_unsigned(va_list *ptr, char **pc);
